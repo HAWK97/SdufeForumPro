@@ -46,6 +46,8 @@
     <modules>
         <module>sdufe-forum-pro-common</module>
         <module>sdufe-forum-pro-gateway</module>
+        <module>sdufe-forum-pro-bussiness</module>
+        <module>sdufe-forum-pro-auth</module>
     </modules>
 
     <dependencyManagement>
@@ -81,6 +83,26 @@
             <dependency>
                 <groupId>com.hawk</groupId>
                 <artifactId>sdufe-forum-pro-config</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.hawk</groupId>
+                <artifactId>sdufe-forum-pro-base</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.hawk</groupId>
+                <artifactId>sdufe-forum-pro-datasource</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.hawk</groupId>
+                <artifactId>sdufe-forum-pro-api</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.hawk</groupId>
+                <artifactId>sdufe-forum-pro-cache</artifactId>
                 <version>${project.version}</version>
             </dependency>
 
