@@ -1,0 +1,11 @@
+spring:
+  elasticsearch:
+    enable: ${sdufe.forum.elasticsearch.enable}
+    uris: http://${sdufe.forum.elasticsearch.url}
+    username: ${sdufe.forum.elasticsearch.username}
+    password: ${sdufe.forum.elasticsearch.password}
+easy-es:
+  enable: ${sdufe.forum.elasticsearch.enable}
+  address : ${sdufe.forum.elasticsearch.url}
+  username: ${sdufe.forum.elasticsearch.username}
+  password: ${sdufe.forum.elasticsearch.password}
