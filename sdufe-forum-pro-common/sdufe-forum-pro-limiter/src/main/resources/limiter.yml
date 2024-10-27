@@ -1,0 +1,14 @@
+spring:
+  cloud:
+    sentinel:
+      transport:
+        dashboard: ${sdufe.forum.sentinel.url}
+        port: ${sdufe.forum.sentinel.port}
+      datasource:
+        ds:
+          nacos:
+            server-addr: ${sdufe.forum.nacos.server.url}
+            data-id:  ${sdufe.forum.sentinel.nacos.data-id}
+            group-id: DEFAULT_GROUP
+            data-type: json
+            rule-type: flow  # ???? degrade, param-flow, etc.
