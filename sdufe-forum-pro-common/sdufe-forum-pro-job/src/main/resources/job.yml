@@ -1,0 +1,7 @@
+spring:
+  xxl:
+    job:
+      enabled: true
+      adminAddresses: http://${sdufe.forum.xxl-job.url}/xxl-job-admin/
+      appName: ${sdufe.forum.xxl-job.appName}
+      accessToken: ${sdufe.forum.xxl-job.accessToken}
