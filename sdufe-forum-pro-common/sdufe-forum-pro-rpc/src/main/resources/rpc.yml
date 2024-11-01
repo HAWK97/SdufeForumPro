@@ -12,5 +12,6 @@ dubbo:
       group: ${sdufe.forum.dubbo.nacos.group}
   application:
     name: ${spring.application.name}
+    serialize-check-status: WARN
     qos-enable: true
     qos-accept-foreign-ip: false

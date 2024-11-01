@@ -3,4 +3,4 @@ spring:
     stream:
       rocketmq:
         binder:
-          name-server: ${nft.turbo.rocketmq.url}
+          name-server: ${sdufe.forum.rocketmq.url}

@@ -10,6 +10,7 @@ sdufe:
     redis:
       url: 192.168.157.128  # Redis 的地址 #首次启动前务必修改成你自己的
       port: 6379  # Redis 的端口号 #首次启动前务必修改成你自己的
+      username: default
       password: '071268' # Redis 的密码 #首次启动前务必修改成你自己的
     elasticsearch:
       enable: true # 如果你要使用es(没有启动一键mock)，这里需要改成true
@@ -17,14 +18,14 @@ sdufe:
       username: hawk # ElasticSearch 的用户名 ##如果你要使用es(没有启动一键mock)，这里需要改成true
       password: 071268  # ElasticSearch 的密码 ##如果你要使用es(没有启动一键mock)，这里需要改成true
     xxl-job:
-      url: 192.168.157.128:23333  # XXL-JOB 的地址 # 如果你要用他，这里需要改成你自己的
-      appName: xxl-job-executor  # 需要和你在xxl-job上创建的执行器名字保持一致，这里需要改成你自己的
+      url: 192.168.157.128:8082  # XXL-JOB 的地址 # 如果你要用他，这里需要改成你自己的
+      appName: xxl-job-sdufeforumpro-executor  # 需要和你在xxl-job上创建的执行器名字保持一致，这里需要改成你自己的
       accessToken: default_token # 需要和你在xxl-job上创建的token保持一致，这里需要改成你自己的
     sentinel:
       url: 192.168.157.128:8099 # Sentinel 的地址+端口号 # 如果用了sentinel 这里需要改成你自己的sentinel的控制台地址
       port: 8098 # Sentinel 端口号 # 如果用了sentinel 这里需要改成你自己的sentinel的端口号
       nacos:
-        data-id: nfturbo-gateway-sentinel # Sentinel配置保存的 nacos 的 data-id # 如果用了sentinel 这里需要改成你自己的 在nacos上定义的data-id
+        data-id: sdufeforumpro-gateway-sentinel # Sentinel配置保存的 nacos 的 data-id # 如果用了sentinel 这里需要改成你自己的 在nacos上定义的data-id
     rocketmq:
       url: 192.168.157.128:9876 # RocketMQ 的地址+端口号 # 如果你要用RocketMQ，这里需要改成你自己的
     dubbo:

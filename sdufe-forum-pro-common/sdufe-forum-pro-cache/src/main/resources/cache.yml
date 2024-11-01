@@ -1,9 +1,10 @@
 spring:
   data:
     redis:
-      host: ${nft.turbo.redis.url}
-      port: ${nft.turbo.redis.port}
-      password: ${nft.turbo.redis.password}
+      host: ${sdufe.forum.redis.url}
+      port: ${sdufe.forum.redis.port}
+      username: ${sdufe.forum.redis.username}
+      password: ${sdufe.forum.redis.password}
       ssl:
         enabled: true
   redis:
@@ -15,10 +16,10 @@ spring:
           timeout: 3000
           retryAttempts: 3
           retryInterval: 1500
-          password: ${nft.turbo.redis.password}
+          password: ${sdufe.forum.redis.password}
           subscriptionsPerConnection: 5
           clientName: null
-          address: "redis://${nft.turbo.redis.url}:${nft.turbo.redis.port}"
+          address: "redis://${sdufe.forum.redis.url}:${sdufe.forum.redis.port}"
           subscriptionConnectionMinimumIdleSize: 1
           subscriptionConnectionPoolSize: 50
           connectionMinimumIdleSize: 24
