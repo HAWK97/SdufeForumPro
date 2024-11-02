@@ -1,0 +1,5 @@
+spring:
+  application:
+    name: sudfe-forum-pro-gateway
+  config:
+    import: classpath:base.yml,classpath:config.yml
