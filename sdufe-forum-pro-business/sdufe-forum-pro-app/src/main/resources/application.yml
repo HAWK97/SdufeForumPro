@@ -1,0 +1,12 @@
+spring:
+  profiles:
+    active: dev
+  application:
+    name: sdufe-forum-pro-app
+  config:
+    import: classpath:base.yml,classpath:datasource.yml,classpath:rpc.yml,classpath:cache.yml,classpath:job.yml
+server:
+  port: 8085
+dubbo:
+  application:
+    qos-port: 33334
