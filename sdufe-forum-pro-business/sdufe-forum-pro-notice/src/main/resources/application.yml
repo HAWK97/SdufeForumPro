@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: sdufe-forum-pro-notice
+  config:
+    import: classpath:base.yml,classpath:datasource.yml,classpath:rpc.yml,classpath:cache.yml
+  cloud:
+    stream:
+      bindings:
+        notice-out-0:
+          content-type: application/json
+          destination: notice-result-topic
+          group: notice-group
+          binder: rocketmq
+  profiles:
+    active: dev
+
+server:
+  port: 8085
