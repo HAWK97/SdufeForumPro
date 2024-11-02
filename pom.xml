@@ -46,7 +46,7 @@
     <modules>
         <module>sdufe-forum-pro-common</module>
         <module>sdufe-forum-pro-gateway</module>
-        <module>sdufe-forum-pro-bussiness</module>
+        <module>sdufe-forum-pro-business</module>
         <module>sdufe-forum-pro-auth</module>
     </modules>
 
@@ -82,6 +82,21 @@
 
             <dependency>
                 <groupId>com.hawk</groupId>
+                <artifactId>sdufe-forum-pro-auth</artifactId>
+                <version>0.0.1-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>com.hawk</groupId>
+                <artifactId>sdufe-forum-pro-app</artifactId>
+                <version>0.0.1-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>com.hawk</groupId>
+                <artifactId>sdufe-forum-pro-notice</artifactId>
+                <version>0.0.1-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>com.hawk</groupId>
                 <artifactId>sdufe-forum-pro-config</artifactId>
                 <version>${project.version}</version>
             </dependency>
@@ -104,6 +119,61 @@
                 <groupId>com.hawk</groupId>
                 <artifactId>sdufe-forum-pro-cache</artifactId>
                 <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.hawk</groupId>
+                <artifactId>sdufe-forum-pro-es</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.hawk</groupId>
+                <artifactId>sdufe-forum-pro-file</artifactId>
+                <version>0.0.1-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>com.hawk</groupId>
+                <artifactId>sdufe-forum-pro-job</artifactId>
+                <version>0.0.1-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>com.hawk</groupId>
+                <artifactId>sdufe-forum-pro-limiter</artifactId>
+                <version>0.0.1-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>com.hawk</groupId>
+                <artifactId>sdufe-forum-pro-lock</artifactId>
+                <version>0.0.1-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>com.hawk</groupId>
+                <artifactId>sdufe-forum-pro-mq</artifactId>
+                <version>0.0.1-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>com.hawk</groupId>
+                <artifactId>sdufe-forum-pro-rpc</artifactId>
+                <version>0.0.1-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>com.hawk</groupId>
+                <artifactId>sdufe-forum-pro-sa-token</artifactId>
+                <version>0.0.1-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>com.hawk</groupId>
+                <artifactId>sdufe-forum-pro-sms</artifactId>
+                <version>0.0.1-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>com.hawk</groupId>
+                <artifactId>sdufe-forum-pro-web</artifactId>
+                <version>0.0.1-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>com.hawk</groupId>
+                <artifactId>sdufe-forum-pro-user</artifactId>
+                <version>0.0.1-SNAPSHOT</version>
             </dependency>
 
             <dependency>

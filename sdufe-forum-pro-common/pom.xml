@@ -37,6 +37,16 @@
         <module>sdufe-forum-pro-datasource</module>
         <module>sdufe-forum-pro-api</module>
         <module>sdufe-forum-pro-cache</module>
+        <module>sdufe-forum-pro-es</module>
+        <module>sdufe-forum-pro-file</module>
+        <module>sdufe-forum-pro-job</module>
+        <module>sdufe-forum-pro-limiter</module>
+        <module>sdufe-forum-pro-lock</module>
+        <module>sdufe-forum-pro-mq</module>
+        <module>sdufe-forum-pro-rpc</module>
+        <module>sdufe-forum-pro-sa-token</module>
+        <module>sdufe-forum-pro-sms</module>
+        <module>sdufe-forum-pro-web</module>
     </modules>
 
     <dependencies>
