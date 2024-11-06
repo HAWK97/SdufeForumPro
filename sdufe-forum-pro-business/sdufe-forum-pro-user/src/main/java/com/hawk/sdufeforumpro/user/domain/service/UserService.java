@@ -13,6 +13,7 @@ import com.alicp.jetcache.template.QuickConfig;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.hawk.sdufeforumpro.api.user.constant.UserConstant;
 import com.hawk.sdufeforumpro.api.user.constant.UserOperateTypeEnum;
 import com.hawk.sdufeforumpro.api.user.request.UserModifyRequest;
 import com.hawk.sdufeforumpro.api.user.response.UserOperatorResponse;
@@ -41,11 +42,11 @@ import javax.annotation.PostConstruct;
 import java.time.Duration;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Date;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 import static com.hawk.sdufeforumpro.user.infrastructure.exception.UserErrorCode.*;
-import static net.sf.jsqlparser.util.validation.metadata.NamedObject.user;
 
 @Service
 public class UserService extends ServiceImpl<UserMapper, User> implements InitializingBean {
@@ -258,6 +259,38 @@ public class UserService extends ServiceImpl<UserMapper, User> implements Initia
         }
 
         return inviteRankInfos;
+    }
+
+    public void follow(String followId, String followedId) {
+        RScoredSortedSet<String> followSet = redissonClient.getScoredSortedSet(UserConstant.FOLLOW_KEY_PREFIX + followId);
+        RScoredSortedSet<String> followedSet = redissonClient.getScoredSortedSet(UserConstant.FOLLOWED_KEY_PREFIX + followedId);
+
+        followSet.add((double) new Date().getTime() / 1000, followedId);
+        followedSet.add((double) new Date().getTime() / 1000, followId);
+    }
+
+    public void unFollow(String followId, String followedId) {
+        RScoredSortedSet<String> followSet = redissonClient.getScoredSortedSet(UserConstant.FOLLOW_KEY_PREFIX + followId);
+        RScoredSortedSet<String> followedSet = redissonClient.getScoredSortedSet(UserConstant.FOLLOWED_KEY_PREFIX + followedId);
+
+        followSet.remove(followedId);
+        followedSet.remove(followId);
+    }
+
+    public PageResponse<User> getFollowUser(String userId, Integer currentPage, Integer pageSize) {
+        RScoredSortedSet<String> followSet = redissonClient.getScoredSortedSet(UserConstant.FOLLOW_KEY_PREFIX + userId);
+        Collection<String> followUserIdList = followSet.valueRangeReversed(0, followSet.size());
+
+        List<User> userList = followUserIdList.stream().map(id -> findById(Long.valueOf(id))).toList();
+        return PageResponse.of(userList, userList.size(), pageSize, currentPage);
+    }
+
+    public PageResponse<User> getFollowedUser(String userId, Integer currentPage, Integer pageSize) {
+        RScoredSortedSet<String> followedSet = redissonClient.getScoredSortedSet(UserConstant.FOLLOWED_KEY_PREFIX + userId);
+        Collection<String> followedUserIdList = followedSet.valueRangeReversed(0, followedSet.size());
+
+        List<User> userList = followedUserIdList.stream().map(id -> findById(Long.valueOf(id))).toList();
+        return PageResponse.of(userList, userList.size(), pageSize, currentPage);
     }
 
     public boolean nickNameExist(String nickName) {

@@ -26,6 +26,11 @@ public class UserInfo implements Serializable {
     private String nickName;
 
     /**
+     * 个人简介
+     */
+    private String introduce;
+
+    /**
      * 手机号
      */
     private String telephone;
