@@ -36,14 +36,21 @@ public class UserController {
     private FileService fileService;
 
     @GetMapping("/getUserInfo")
-    public Result<UserInfo> getUserInfo() {
-        String userId = (String) StpUtil.getLoginId();
+    public Result<UserInfo> getUserInfo(String userId) {
+        if (StringUtils.isBlank(userId)) {
+            userId = (String) StpUtil.getLoginId();
+        }
         User user = userService.findById(Long.valueOf(userId));
 
         if (user == null) {
             throw new UserException(USER_NOT_EXIST);
         }
-        return Result.success(UserConvertor.INSTANCE.mapToVo(user));
+
+        UserInfo userInfo = UserConvertor.INSTANCE.mapToVo(user);
+        userInfo.setCurrentFollow(userService.getCurrentFollowStatus((String) StpUtil.getLoginId(), userId));
+        userInfo.setFollowCount(userService.getFollowCount(userId));
+        userInfo.setFollowedCount(userService.getFollowedCount(userId));
+        return Result.success(userInfo);
     }
 
     @PostMapping("/modifyNickName")

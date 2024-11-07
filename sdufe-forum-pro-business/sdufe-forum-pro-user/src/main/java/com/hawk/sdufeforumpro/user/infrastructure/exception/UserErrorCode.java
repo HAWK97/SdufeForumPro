@@ -58,11 +58,11 @@ public enum UserErrorCode implements ErrorCode {
 
     @Override
     public String getCode() {
-        return "";
+        return this.code;
     }
 
     @Override
     public String getMessage() {
-        return "";
+        return this.message;
     }
 }

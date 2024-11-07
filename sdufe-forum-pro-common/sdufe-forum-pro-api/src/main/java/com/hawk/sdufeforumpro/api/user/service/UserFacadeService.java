@@ -18,7 +18,6 @@ public interface UserFacadeService {
      */
     UserQueryResponse<UserInfo> query(UserQueryRequest userQueryRequest);
 
-
     /**
      * 分页查询用户信息
      * @param userPageQueryRequest

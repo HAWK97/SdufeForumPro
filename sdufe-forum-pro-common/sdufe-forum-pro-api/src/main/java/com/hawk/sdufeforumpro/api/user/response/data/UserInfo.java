@@ -59,4 +59,19 @@ public class UserInfo implements Serializable {
      * 注册时间
      */
     private Date createTime;
+
+    /**
+     * 当前用户是否关注该用户
+     */
+    private Boolean currentFollow;
+
+    /**
+     * 关注数
+     */
+    private Integer followCount;
+
+    /**
+     * 粉丝数
+     */
+    private Integer followedCount;
 }

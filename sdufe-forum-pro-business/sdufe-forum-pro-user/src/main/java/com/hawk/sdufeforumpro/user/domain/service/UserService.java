@@ -212,7 +212,7 @@ public class UserService extends ServiceImpl<UserMapper, User> implements Initia
 
         userOperatorResponse.setSuccess(false);
         userOperatorResponse.setResponseCode(UserErrorCode.USER_OPERATE_FAILED.getCode());
-        userOperatorResponse.setResponseCode(UserErrorCode.USER_OPERATE_FAILED.getMessage());
+        userOperatorResponse.setResponseMessage(UserErrorCode.USER_OPERATE_FAILED.getMessage());
 
         return userOperatorResponse;
     }
@@ -291,6 +291,21 @@ public class UserService extends ServiceImpl<UserMapper, User> implements Initia
 
         List<User> userList = followedUserIdList.stream().map(id -> findById(Long.valueOf(id))).toList();
         return PageResponse.of(userList, userList.size(), pageSize, currentPage);
+    }
+
+    public Boolean getCurrentFollowStatus(String followId, String followedId) {
+        RScoredSortedSet<String> followSet = redissonClient.getScoredSortedSet(UserConstant.FOLLOW_KEY_PREFIX + followId);
+        return followSet.contains(followedId);
+    }
+
+    public Integer getFollowCount(String userId) {
+        RScoredSortedSet<String> followSet = redissonClient.getScoredSortedSet(UserConstant.FOLLOW_KEY_PREFIX + userId);
+        return followSet.size();
+    }
+
+    public Integer getFollowedCount(String userId) {
+        RScoredSortedSet<String> followedSet = redissonClient.getScoredSortedSet(UserConstant.FOLLOWED_KEY_PREFIX + userId);
+        return followedSet.size();
     }
 
     public boolean nickNameExist(String nickName) {
