@@ -4,7 +4,22 @@ spring:
   application:
     name: sdufe-forum-pro-app
   config:
-    import: classpath:base.yml,classpath:datasource.yml,classpath:rpc.yml,classpath:cache.yml,classpath:job.yml
+    import: classpath:base.yml,classpath:datasource.yml,classpath:rpc.yml,classpath:cache.yml,classpath:job.yml,classpath:stream.yml,classpath:es.yml
+  cloud:
+    function:
+      definition: like
+    stream:
+      bindings:
+        like-out-0:
+          content-type: application/json
+          destination: like-topic
+          group: like-group
+          binder: rocketmq
+        like-in-0:
+          content-type: application/json
+          destination: like-topic
+          group: like-group
+          binder: rocketmq
 server:
   port: 8085
 dubbo:

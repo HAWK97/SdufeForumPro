@@ -21,6 +21,6 @@ spring:
         - id: sdufe-forum-pro-app
           uri: lb://sdufe-forum-pro-app
           predicates:
-            - Path=/trade/**,/order/**,/user/**,/collection/**,/wxPay/**
+            - Path=/user/**,/article/**
 server:
   port: 8090
