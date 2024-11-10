@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: sdufe-forum-pro-user
+  config:
+    import: classpath:base.yml,classpath:rpc.yml,classpath:cache.yml,classpath:datasource.yml,classpath:es.yml,classpath:limiter.yml,classpath:stream.yml
+
+server:
+  port: 8085

@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>com.hawk</groupId>
+        <artifactId>sdufe-forum-pro-business</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+    </parent>
+
+    <artifactId>sdufe-forum-pro-article</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <name>sdufe-forum-pro-article</name>
+    <description>sdufe-forum-pro-article</description>
+    <url/>
+
+    <licenses>
+        <license/>
+    </licenses>
+
+    <developers>
+        <developer/>
+    </developers>
+
+    <scm>
+        <connection/>
+        <developerConnection/>
+        <tag/>
+        <url/>
+    </scm>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.hawk</groupId>
+            <artifactId>sdufe-forum-pro-base</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.hawk</groupId>
+            <artifactId>sdufe-forum-pro-config</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.hawk</groupId>
+            <artifactId>sdufe-forum-pro-file</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.hawk</groupId>
+            <artifactId>sdufe-forum-pro-lock</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.hawk</groupId>
+            <artifactId>sdufe-forum-pro-api</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.hawk</groupId>
+            <artifactId>sdufe-forum-pro-datasource</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.hawk</groupId>
+            <artifactId>sdufe-forum-pro-es</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.hawk</groupId>
+            <artifactId>sdufe-forum-pro-rpc</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.hawk</groupId>
+            <artifactId>sdufe-forum-pro-limiter</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.hawk</groupId>
+            <artifactId>sdufe-forum-pro-mq</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.hawk</groupId>
+            <artifactId>sdufe-forum-pro-web</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.squareup.okhttp3</groupId>
+            <artifactId>okhttp</artifactId>
+            <version>4.9.0</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
