@@ -21,6 +21,8 @@
         <module>sdufe-forum-pro-app</module>
         <module>sdufe-forum-pro-user</module>
         <module>sdufe-forum-pro-notice</module>
+        <module>sdufe-forum-pro-article</module>
+        <module>sdufe-forum-pro-message</module>
     </modules>
 
     <dependencies>

@@ -40,6 +40,16 @@
             <groupId>com.hawk</groupId>
             <artifactId>sdufe-forum-pro-user</artifactId>
         </dependency>
+
+        <dependency>
+            <groupId>com.hawk</groupId>
+            <artifactId>sdufe-forum-pro-article</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.hawk</groupId>
+            <artifactId>sdufe-forum-pro-message</artifactId>
+        </dependency>
     </dependencies>
 
     <build>

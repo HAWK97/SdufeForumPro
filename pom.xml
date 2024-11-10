@@ -97,6 +97,21 @@
             </dependency>
             <dependency>
                 <groupId>com.hawk</groupId>
+                <artifactId>sdufe-forum-pro-article</artifactId>
+                <version>0.0.1-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>com.hawk</groupId>
+                <artifactId>sdufe-forum-pro-user</artifactId>
+                <version>0.0.1-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>com.hawk</groupId>
+                <artifactId>sdufe-forum-pro-message</artifactId>
+                <version>0.0.1-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>com.hawk</groupId>
                 <artifactId>sdufe-forum-pro-config</artifactId>
                 <version>${project.version}</version>
             </dependency>
@@ -172,7 +187,7 @@
             </dependency>
             <dependency>
                 <groupId>com.hawk</groupId>
-                <artifactId>sdufe-forum-pro-user</artifactId>
+                <artifactId>sdufe-forum-pro-ws</artifactId>
                 <version>0.0.1-SNAPSHOT</version>
             </dependency>
 

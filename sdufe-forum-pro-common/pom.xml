@@ -47,6 +47,7 @@
         <module>sdufe-forum-pro-sa-token</module>
         <module>sdufe-forum-pro-sms</module>
         <module>sdufe-forum-pro-web</module>
+        <module>sdufe-forum-pro-ws</module>
     </modules>
 
     <dependencies>
