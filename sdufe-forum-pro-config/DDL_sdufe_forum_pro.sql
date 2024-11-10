@@ -1,5 +1,5 @@
 /******************************************/
-/*   DatabaseName = nfturbo   */
+/*   DatabaseName = sdufe_forum_pro   */
 /*   TableName = users   */
 /******************************************/
 CREATE TABLE `users` (
@@ -23,7 +23,7 @@ CREATE TABLE `users` (
 ;
 
 /******************************************/
-/*   DatabaseName = nfturbo   */
+/*   DatabaseName = sdufe_forum_pro   */
 /*   TableName = user_operate_stream   */
 /******************************************/
 CREATE TABLE `user_operate_stream` (
@@ -42,7 +42,7 @@ CREATE TABLE `user_operate_stream` (
 ;
 
 /******************************************/
-/*   DatabaseName = nfturbo   */
+/*   DatabaseName = sdufe_forum_pro   */
 /*   TableName = notice   */
 /******************************************/
 CREATE TABLE `notice` (
@@ -61,4 +61,57 @@ CREATE TABLE `notice` (
   `extend_info` varchar(1024) DEFAULT NULL COMMENT '扩展信息',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='通知表'
+;
+
+/******************************************/
+/*   DatabaseName = sdufe_forum_pro   */
+/*   TableName = articles   */
+/******************************************/
+CREATE TABLE `articles` (
+  `id` bigint unsigned NOT NULL AUTO_INCREMENT COMMENT '文章ID（自增主键）',
+  `gmt_create` datetime NOT NULL COMMENT '创建时间',
+  `gmt_modified` datetime NOT NULL COMMENT '最后更新时间',
+  `content` text CHARACTER SET utf8 COMMENT '文章内容',
+  `user_id` bigint unsigned NOT NULL COMMENT '用户ID',
+  `deleted` int DEFAULT NULL COMMENT '是否逻辑删除，0为未删除，非0为已删除',
+  `lock_version` int DEFAULT NULL COMMENT '乐观锁版本号',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='文章信息表'
+;
+
+/******************************************/
+/*   DatabaseName = sdufe_forum_pro   */
+/*   TableName = user_operate_stream   */
+/******************************************/
+CREATE TABLE `article_operate_stream` (
+  `id` bigint unsigned NOT NULL AUTO_INCREMENT COMMENT '流水ID（自增主键）',
+  `gmt_create` datetime DEFAULT NULL COMMENT '创建时间',
+  `gmt_modified` datetime DEFAULT NULL COMMENT '最后更新时间',
+  `article_id` varchar(64) DEFAULT NULL COMMENT '文章ID',
+  `user_id` varchar(64) DEFAULT NULL COMMENT '用户ID',
+  `type` varchar(64) DEFAULT NULL COMMENT '操作类型',
+  `operate_time` datetime DEFAULT NULL COMMENT '操作时间',
+  `param` text COMMENT '操作参数',
+  `extend_info` text COMMENT '扩展字段',
+  `deleted` int DEFAULT NULL COMMENT '是否逻辑删除，0为未删除，非0为已删除',
+  `lock_version` int DEFAULT NULL COMMENT '乐观锁版本号',
+   PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COMMENT='文章操作流水表'
+;
+
+/******************************************/
+/*   DatabaseName = sdufe_forum_pro   */
+/*   TableName = images   */
+/******************************************/
+CREATE TABLE `images` (
+  `id` bigint unsigned NOT NULL AUTO_INCREMENT COMMENT '图片ID（自增主键）',
+  `gmt_create` datetime NOT NULL COMMENT '创建时间',
+  `gmt_modified` datetime NOT NULL COMMENT '最后更新时间',
+  `url` varchar(255) DEFAULT NULL COMMENT '图片URL',
+  `article_id` bigint unsigned NOT NULL COMMENT '文章ID',
+  `image_state` varchar(128) CHARACTER SET utf8 DEFAULT NULL COMMENT '状态',
+  `deleted` int DEFAULT NULL COMMENT '是否逻辑删除，0为未删除，非0为已删除',
+  `lock_version` int DEFAULT NULL COMMENT '乐观锁版本号',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='图片信息表'
 ;
